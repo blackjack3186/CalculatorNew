@@ -12,7 +12,7 @@ import java.util.Scanner;
                     public static void main(String[] args) throws Exception {
                         System.out.println("Введите две строки, либо строку и число, между ними знак операции: ");
                         String userInput = scanner.nextLine();
-                        char[] uchar = new char[26]; //Массив данных.
+                        char[] uchar = new char[40]; //Массив данных.
                         ArrayList<String> strBlock00 = new ArrayList<>(10);
                         for (int i = 0; i < userInput.length(); i++) {
                             uchar[i] = userInput.charAt(i); //Выбор операции.
@@ -49,7 +49,7 @@ import java.util.Scanner;
                             result = calculated(st01, number, operation);
                             limitCalc();
                         }else{ // А любая другая операция выбросит исключение.
-                            throw new Exception("Недопустимая операция. Число должно быть не в начале, а в конце.");
+                            throw new Exception("Недопустимая операция.");
                         }
                     }
 
