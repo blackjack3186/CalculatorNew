@@ -16,8 +16,11 @@ public class StringCalculator {
         String[] massiv = expressInput.split("\\" + operation + " ");
         if (massiv.length > 2) {throw new Exception("Ошибка! Введено больше двух строк.");}
         if (massiv.length < 2) {throw new Exception("Ошибка! Вы ввели только одну строку.");}
-        if (massiv[0].length() > 12 || massiv[1].length() > 12) throw new Exception("Введено больше 10 символов");
-        // На данном этапе кавычки это тоже символы. Потому 12, а не 10.
+        if (massiv[0].length() > 13 || massiv[1].length() > 12) throw new Exception("Введено больше 10 символов");
+        //Тут возник небольшой затуп.
+// На данном этапе кавычки это тоже символы. Потому 12, а не 10.
+// И ещё лишний пробел в первом элементе массива, из-за него выскакивает ошибка при вводе «"Example!!!" / 3».
+// Наверное он появился из-за регулярного выражения в строке 16. В любом случае, я его обрезал в строке 37.
         if (!massiv[0].contains("\"")) throw new Exception("Ошибка! Операции типа «число на строку» недопустимы. Строка должна быть в кавычках.");
         if (operation == '*' || operation == '/') {
             if (massiv[1].contains("\"")) throw new Exception("Ошибка! Умножать или делить строку можно только на число.");}
