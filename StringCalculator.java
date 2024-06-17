@@ -15,7 +15,7 @@ public class StringCalculator {
         if (operation == ' ') throw new Exception("Ошибка! Отсутствует знак операции «+, -, /, *». Либо вы ничего не ввели.");
         String[] massiv = expressInput.split("\\" + operation + " ");
         if (massiv.length > 2) {throw new Exception("Ошибка! Введено больше двух строк.");}
-        if (massiv.length < 2) {throw new Exception("Ошибка! Вы ввели только одну строку.");}
+        if (massiv.length < 2) {throw new Exception("Ошибка! Вы ввели только одну строку, либо только знак операции.");}
         if (massiv[0].length() > 13 || massiv[1].length() > 12) throw new Exception("Введено больше 10 символов");
         //Тут возник небольшой затуп.
 // На данном этапе кавычки это тоже символы. Потому 12, а не 10.
